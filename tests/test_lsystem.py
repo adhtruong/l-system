@@ -11,10 +11,7 @@ class Alphabet(Enum):
 
 class TestLSystem(TestCase):
     def test_algae(self):
-        lsystem = LSystem(
-            Alphabet,
-            {Alphabet.A: [Alphabet.A, Alphabet.B], Alphabet.B: [Alphabet.A]},
-        )
+        lsystem = LSystem(Alphabet, {Alphabet.A: [Alphabet.A, Alphabet.B], Alphabet.B: [Alphabet.A]})
         current = [Alphabet.A]
         for expected in (
             [Alphabet.A, Alphabet.B],
@@ -30,6 +27,4 @@ class TestLSystem(TestCase):
 
         lsystem = LSystem(Alphabet, {})
         self.assertEqual([Alphabet.A], lsystem.iterate([Alphabet.A]))
-        self.assertEqual(
-            [Alphabet.A, Alphabet.B], lsystem.iterate([Alphabet.A, Alphabet.B])
-        )
+        self.assertEqual([Alphabet.A, Alphabet.B], lsystem.iterate([Alphabet.A, Alphabet.B]))

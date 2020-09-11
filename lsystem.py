@@ -1,16 +1,12 @@
 from enum import Enum
 from typing import Dict, List, Type, TypeVar
 
-
 Alphabet = TypeVar("Alphabet", bound=Enum)
 
 
 class LSystem:
     def __init__(
-        self,
-        alphabet: Type[Alphabet],
-        rules: Dict[Alphabet, List[Alphabet]],
-        allow_constants: bool = True,
+        self, alphabet: Type[Alphabet], rules: Dict[Alphabet, List[Alphabet]], allow_constants: bool = True
     ) -> None:
         self._alphabet = alphabet
         self._rules = rules
