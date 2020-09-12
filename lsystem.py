@@ -2,6 +2,21 @@ from enum import Enum
 from typing import Dict, List, Type, TypeVar
 
 Alphabet = TypeVar("Alphabet", bound=Enum)
+Rules = Dict[Alphabet, List[Alphabet]]
+
+
+def iterate(current: List[Alphabet], rules: Rules, allow_constants: bool = True) -> List[Alphabet]:
+    output = []
+    for symbol in current:
+        try:
+            successor = rules[symbol]
+        except KeyError:
+            if allow_constants:
+                output.append(symbol)
+                continue
+            raise ValueError(f"{symbol} is not valid")
+        output.extend(successor)
+    return output
 
 
 class LSystem:
