@@ -1,1 +1,2 @@
-from lsystem import LSystem, iterate
+from .grammar import LSystem, iterate
+from .manager import LSystemManager

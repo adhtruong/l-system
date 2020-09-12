@@ -34,6 +34,14 @@ class LSystem:
 
             self._rules[symbol] = [symbol]
 
+    @property
+    def alphabet(self) -> Type[Alphabet]:
+        return self._alphabet
+
+    @property
+    def rules(self) -> Rules:
+        return self._rules
+
     def iterate(self, current: List[Alphabet]) -> List[Alphabet]:
         output = []
         for symbol in current:
