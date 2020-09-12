@@ -1,4 +1,4 @@
-from typing import Callable, Dict, List, Type
+from typing import Callable, Dict, List, Type, Union
 
 from .grammar import Alphabet, LSystem, Rules
 
@@ -11,8 +11,8 @@ class LSystemManager:
         reset_method: Callable[[], None],
         render_methods: Dict[Alphabet, Callable[[], None]],
     ):
-        self._axiom = axiom if isistance(axiom, list) else [axiom]
-        self._state = self.axiom
+        self._axiom = axiom if isinstance(axiom, list) else [axiom]
+        self._state = self._axiom
         self._lsystem = lsystem
         self._reset_method = reset_method
         self._render_methods = render_methods

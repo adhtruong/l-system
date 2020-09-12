@@ -1,8 +1,8 @@
 from enum import Enum
 from unittest import TestCase
 
-from grammar import LSystem
-from manager import LSystemManager
+from ..grammar import LSystem
+from ..manager import LSystemManager
 
 
 class Alphabet(Enum):
