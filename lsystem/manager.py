@@ -1,6 +1,6 @@
 from typing import Callable, Dict, List, Type, Union
 
-from .grammar import Alphabet, LSystem, Rules
+from lsystem.grammar import Alphabet, LSystem, Rules
 
 
 class LSystemManager:
